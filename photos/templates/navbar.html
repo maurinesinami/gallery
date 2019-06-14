@@ -1,12 +1,17 @@
-<nav class="navbar navbar-inverse"></nav>
-<a href="/" class="navbar-brand">SINAMI'S GALLERY</a>
-<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
-              <a href="{% url 'home-page'%}">Home</a>
-          </li>
-      </ul>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="{% url 'home-page' %}">SINAMI'S GALLERY</a>
+    </div>
   </div>
+</nav>
+</body>
+</html>
