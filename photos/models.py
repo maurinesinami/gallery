@@ -2,7 +2,7 @@ from django.db import models
 class Image(models.Model):
     image_name = models.CharField(max_length =30)
     image_description = models.TextField()
-    image_path = models.ImageField(upload_to = 'gallery/')
+    image_path = models.ImageField(upload_to = 'photos/')
     def __str__(self):
         return self.image_name
 
