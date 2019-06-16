@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from .models import Image
 from django.http import HttpResponse
 def welcome(request):
     all_images = Image.objects.all()
