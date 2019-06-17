@@ -1,0 +1,32 @@
+{%extends 'base.html'%}
+{% block content %} 
+{{ block.super}}
+<div class="container">
+    <div class="col-md-1"></div>
+    <div class="col-md-10">
+        {% if images%}
+        <h2>Found {{ images|length }} of searched term {{message}}</h2>
+      {% else %}
+        <h2> Found 0 images for the search term {{message}}</h2>
+      {% endif %}
+  <hr>
+    </div>
+    {% if images%}
+    {% for image in images %}
+    <div class="col-sm-4 col-sm-4 col-sm-4 col-sm-4">
+        <a href="/image/{{image.image_name}}">
+          <div class="card">
+              <img style="margin:5px;" src="{{image.image.url}}" class="img-responsive" alt="Image">
+             
+            </div> 
+            </a>
+          </div>
+          
+{% endfor %}
+{% endif %}
+</div>
+<div class="col-md-1"></div>
+</div>
+
+{% endblock %}
+    
