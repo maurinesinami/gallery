@@ -1,12 +1,12 @@
 {%extends 'base.html'%}
 {% block content %} 
 {{ block.super}}
-<div class="container">
+<div class="container" >
 <div class="col-md-1">
 
     </div>
     <div class="col-md-10">
-      <h1 class="text-center">SINAMI'S GALLERY</h1><hr>
+      <h1 class="jumbotron" style=" text-align:center;width:100%;background-color:black;color: blanchedalmond;">SINAMI'S GALLERY</h1><hr>
             {% for image_item in images %}
             <div class="col-sm-4 col-sm-4 col-sm-4">
               <a href="/image/{{image_item.id}}">
@@ -14,7 +14,7 @@
                     <img style="margin:5px;" src="{{image_item.image.url}}" class="img-responsive" alt="Image">
                    
                   </div> 
-                  img {{image_item.image.url}}
+                  <button href='{{image_item.image.url}} '>read more</button>
                   </a>
                 </div>
                   {% empty %}
@@ -25,5 +25,5 @@
     </div>
     <div class="col-md-1"></div>
     </div>
-    
+    <footer style="font-family: 'Indie Flower', cursive;font-family: 'Abril Fatface', cursive;text-align: center;background-color: black; color: blanchedalmond;background-attachment: fixed;height: 50px;" > © Copyright</footer>
     {% endblock %}
