@@ -6,7 +6,8 @@
     <div class="col-md-10">
         {% if images%}
         <h2>Found {{ images|length }} of searched term {{message}}</h2>
-      {% else %}
+      print {{ images|length }} 
+        {% else %}
         <h2> Found 0 images for the search term {{message}}</h2>
       {% endif %}
   <hr>

@@ -1,29 +1,110 @@
 {%extends 'base.html'%}
 {% block content %} 
 {{ block.super}}
-<div class="container" >
-<div class="col-md-1">
 
-    </div>
-    <div class="col-md-10">
-      <h1 class="jumbotron" style=" text-align:center;width:100%;background-color:black;color: blanchedalmond;">SINAMI'S GALLERY</h1><hr>
-            {% for image_item in images %}
-            <div class="col-sm-4 col-sm-4 col-sm-4">
-              <a href="/image/{{image_item.id}}">
-                <div class="card">
-                    <img style="margin:5px;" src="{{image_item.image.url}}" class="img-responsive" alt="Image">
-                   
-                  </div> 
-                  <button href='{{image_item.image.url}} '>read more</button>
-                  </a>
+
+    
+      <h1 class="jumbotron" style=" text-align:center;width:100%;color:papayawhip;background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ6Bkx5ewAlkP5YKrA38nEi00ZkSwqzajDA07Z9EUIy3B7EJ4XE');background-attachment: fixed;">SINAMI'S GALLERY</h1><hr>
+      <div class="container" >
+      <div class="card-columns">
+        
+        {% for image in images %}
+
+        <div class="row">
+          <div class="col-md-4 col-sm-6 col-xs-12">
+              <div class="card" style="width: 18rem;">
+                  <img class="img-thumbnail" src="{{image.image.url}}" alt="{{image.image_name}}" data-target="#imageModal{{image.id}}" data-toggle="modal" style="width:500px;height: 300px;">
+                  <div class="card-body">
+                    <h5 class="card-title">{{image.image_name}}</h5>
+                   <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->
+                    <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+                  </div>
                 </div>
-                  {% empty %}
+          </div>
+        </div>
+        {% empty %}
+
+        <div class="row">
+          <h3 class="text-light">
+            There are no images Yet!
+          </h3>
+        </div>
+        {% endfor %}
+
+        {% for image in images %}
+        <div class="modal fade" id="imageModal{{image.id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                  <img src="{{image.image.url}}" data-toggle="modal" alt="" class="img-thumbnail" style="height: auto;width:500px;">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="imageModal{{image.id}}">{{image.image_name}}</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                    
+                  <h3>Location:{{image.location}} </h3>   
+              
+                  <h3>Category:{{image.category}}</h3>
+                 
+                  <p>{{image.description}}</p>
+                
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+
+      <!-- {% for image_item in images %}
+            
+             <a href="/image/{{image_item.id}}"> -->
+                <!-- <div class="card border-secondary ">
+                    <img style="margin:5px;" src="{{image_item.image.url}}" class="img-responsive" alt="Image"
+                    data-target="#imageModal{{image_item.id}}" data-toggle="modal"
+                    alt="" class="img-fluid" id="eachimage" size="100px200">
+                  </div> 
+                  {% endfor%} -->
+                  <!-- <button href='{{image_item.image.url}} '>read more</button> -->
+                  
+      <!-- </div> -->
+<!--                   
                   <div class="row">
                     <h2 class="text-center">There no images here yet</h2>
-                  </div>
-            {% endfor %}
-    </div>
-    <div class="col-md-1"></div>
-    </div>
-    <footer style="font-family: 'Indie Flower', cursive;font-family: 'Abril Fatface', cursive;text-align: center;background-color: black; color: blanchedalmond;background-attachment: fixed;height: 50px;" > © Copyright</footer>
+                  </div> -->
+            
+            
+
+            
+            <!-- {% for image_item in images %} -->
+            <!-- <div class="modal fade" id="imageModal{{image_item.id}}" tabindex="-1" -->
+                 <!-- role="dialog" aria-labelledby="imageModalLabel" aria-hidden="true"> -->
+              <!-- <div class="modal-dialog" role="document"> -->
+                <!-- <div class="modal-content"> -->
+                    <!-- <img src="{{image_item.image.url}}" -->
+                         <!-- data-toggle="modal" alt="" style="height:600px;width:500px;"> -->
+                    <!-- <div class="modal-header"> -->
+                      <!-- <h4 id="modal-text text-center">{{image_item.name}}</h4> -->
+                        <!-- <h4 style="font-family: 'Kodchasan', sans-serif;color:blue;" id="modal-text ">{{image.location}}</h4> -->
+                        <!--  -->
+    <!-- </div> -->
+
+<!-- {% endfor %} -->
+    <!-- </div> -->
+    <!-- <div class="modal-footer"> -->
+<!--  -->
+        <!-- <h5 id=modal-text>{{image.description}}</h5> -->
+<!--  -->
+        <!-- <button type="button" class="btn btn-outline-secondary -->
+        <!-- my-2 my-sm-0" data-dismiss="modal">Close</button> -->
+<!--  -->
+      <!-- </div> -->
+    <!-- </div> -->
+    <!--  -->
+    <!-- </div> -->
+    <!-- </div> --> 
+   
     {% endblock %}

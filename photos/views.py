@@ -38,7 +38,6 @@ def View_full_image(request,id):
     return render(request,'image.html',{'image':image,"locations":locations,"categories":categories})
 
 def search_category(request):
-    #View function for the navbar
     locations = Location.objects.all()
     categories = Category.objects.all()
     if 'image' in request.GET and request.GET['image']:

@@ -1,26 +1,19 @@
 {%extends 'base.html'%}
 {% block content %} 
-{{ block.super}}
 
-<div class="container">
+<!-- <div class="container"> -->
  
-  <div class="col-md-3"></div>
-
-  <div class="col-md-6">
-  {% for img in image %}
-  <h2 class="text-center">{{img.image_name}}</h2><hr><br>
-  <div class="card2">
-    <img style="margin:5px;" src="{{img.image.url}}" class="img-responsive" alt="Image">
+  <div class="row">
+    <img style="margin:5px;" src="{{image.url}}" class="img-responsive" alt="Image">
     </div><br><br>
-    <div class="card">
-      <h5 style="font-family: 'Indie Flower', cursive;font-family: 'Abril Fatface', cursive;"><strong>{{img.category}}</strong></h5>
-    <p style="font-family: 'Indie Flower', cursive;font-family: 'Abril Fatface', cursive;">{{img.description}} </p><br>
-    <p class="end" style="font-family: 'Indie Flower', cursive;font-family: 'Abril Fatface', cursive;">taken in {{img.location}}</p>
+    <div class="row">
+      <!-- <h5 style="font-family: 'Indie Flower', cursive;font-family: 'Abril Fatface', cursive;"><strong>{{img.category}}</strong></h5> -->
+    <p style="font-family: 'Indie Flower', cursive;font-family: 'Abril Fatface', cursive;">{{image.description}} </p><br>
+    <!-- <p class="end" style="font-family: 'Indie Flower', cursive;font-family: 'Abril Fatface', cursive;">taken in {{img.location}}</p> -->
     </div>
     
-    {% endfor %}
-    </div>
-    <div class="col-md-3"></div>
-</div>
+  
+
+   
 
 {% endblock %}
