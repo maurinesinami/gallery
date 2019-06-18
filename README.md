@@ -49,6 +49,16 @@ follow these steps to get the app up and running:
 1. Django 1.11
 2. Python3.6
 3.  HTML and Css
+## Known Bugs
+NO known Bugs.
+## Behavior Driven Development
 
+| Behaviour| Input | Output |
+| ------------- | ----------------- | ------------------ |
+| Display all photos on database  | "https://app-name@heroku.com"   | Loads all photos  |
+| Save uploaded images | Upload image | Saves image |
+
+| Show image details and image in full | Click image | Zooms with a modal |
+| Search by category| search category| returns images on that specific category' |
 ## License
 This project is licensed under the MIT Open Source license, (c) Maurine Sinami
