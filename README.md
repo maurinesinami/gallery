@@ -57,7 +57,6 @@ NO known Bugs.
 | ------------- | ----------------- | ------------------ |
 | Display all photos on database  | "https://app-name@heroku.com"   | Loads all photos  |
 | Save uploaded images | Upload image | Saves image |
-
 | Show image details and image in full | Click image | Zooms with a modal |
 | Search by category| search category| returns images on that specific category' |
 ## License
